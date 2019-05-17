@@ -1,0 +1,15 @@
+/** Header */
+.header {
+  background-color: #CD1212;
+  padding: 18px 0;
+}
+
+.header--title {
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.header--blue-block {
+  background-color: #1F85DE;
+}

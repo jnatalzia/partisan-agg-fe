@@ -1,5 +1,8 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
+const CleanCSS = require('clean-css');
+
+const cleanCSS = new CleanCSS({});
 
 module.exports = {
   mode: process.env.DEBUG ? 'development' : 'production',
@@ -25,8 +28,13 @@ module.exports = {
   },
   plugins: [
     new CopyPlugin([
-      { from: 'src/index.html', to: 'index.html' },
-      { from: 'src/css/', to: 'css/' }
+      { from: 'src/index.html', to: 'index.html'},
+      { from: 'src/manifest.json', to: 'manifest.json' },
+      { from: 'src/css/', to: 'css/', transform(content, path) {
+        console.log();
+        let css = cleanCSS.minify(String(content))
+        return css.styles;
+      }}
     ])
   ],
   watchOptions: {
