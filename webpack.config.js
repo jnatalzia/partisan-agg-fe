@@ -30,6 +30,7 @@ module.exports = {
     new CopyPlugin([
       { from: 'src/index.html', to: 'index.html'},
       { from: 'src/manifest.json', to: 'manifest.json' },
+      { from: 'src/fonts/', to: 'fonts/' },
       { from: 'src/css/', to: 'css/', transform(content, path) {
         console.log();
         let css = cleanCSS.minify(String(content))

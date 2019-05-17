@@ -1,15 +1,33 @@
+/* Global */
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
 /** Header */
 .header {
   background-color: #CD1212;
   padding: 18px 0;
+  position: relative;
+  z-index: 1;
 }
 
 .header--title {
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
+  color: #fff;
+  position: relative;
+  z-index: 1;
 }
 
 .header--blue-block {
   background-color: #1F85DE;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
 }

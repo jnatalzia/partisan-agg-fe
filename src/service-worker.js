@@ -1,6 +1,18 @@
 var dataCacheName = 'partisan-cache';
 var cacheName = 'partisan-cache';
-var filesToCache = [];
+var filesToCache = [
+  "./fonts",
+  "./fonts/OpenSans-Bold.ttf",
+  "./fonts/OpenSans-BoldItalic.ttf",
+  "./fonts/OpenSans-Light.ttf",
+  "./fonts/OpenSans-LightItalic.ttf",
+  "./fonts/OpenSans-Semibold.ttf",
+  "./fonts/OpenSans-SemiboldItalic.ttf",
+  "./fonts/OpenSans-Regular.ttf",
+  "./fonts/OpenSans-Italic.ttf",
+  "./fonts/OpenSans-ExtraBold.ttf",
+  "./fonts/OpenSans-ExtraBoldItalic.ttf",
+];
 
 self.addEventListener('install', function(e) {
   console.log('[ServiceWorker] Install');
