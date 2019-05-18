@@ -1,3 +1,6 @@
+/* THE BLUE #2B3692 */
+/* THE RED #D73232 */
+
 /* Global */
 *, *:before, *:after {
   box-sizing: border-box;
@@ -6,28 +9,105 @@
   -webkit-font-smoothing: antialiased;
 }
 
+a,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+  display: block;
+  text-decoration: none;
+}
+
 /** Header */
 .header {
-  background-color: #CD1212;
-  padding: 18px 0;
+  background-color: #D73232;
+  padding: 12px 0;
   position: relative;
   z-index: 1;
 }
 
 .header--title {
-  font-weight: bold;
+  font-family: 'Open Sans Light', sans-serif;
   text-align: center;
   text-transform: uppercase;
+  letter-spacing: 4px;
   color: #fff;
   position: relative;
   z-index: 1;
+  font-size: 20px;
 }
 
 .header--blue-block {
-  background-color: #1F85DE;
+  background-color: #2B3692;
   height: 100%;
   position: absolute;
   right: 0;
   top: 0;
   width: 50%;
+}
+
+/** Templates */
+.templates {
+  display: none;
+}
+
+/** Articles */
+.article {
+  padding: 22px 12px;
+  border-bottom: 1px solid #DEDEDE;
+}
+
+.article__main-info {
+  display: flex;
+}
+.article__thumb {
+  height: 50px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: #333;
+  width: 50px;
+  margin-right: 12px;
+}
+
+.article__title-and-author {
+  flex: 1;
+  padding-bottom: 12px;
+}
+
+.article__title {
+  font-size: 16px;
+  font-family: 'Open Sans Semibold', sans-serif;
+  margin-bottom: 4px;
+}
+
+.article__author {
+  font-size: 14px;
+  font-family: 'Open Sans Light', sans-serif;
+}
+
+.article__partisan-lean { 
+  font-family: 'Open Sans Semibold', sans-serif;
+}
+
+.article__partisan-lean--l,
+.article__partisan-lean--ll {
+  color: #2B3692;
+}
+
+.article__partisan-lean--r,
+.article__partisan-lean--rr {
+  color: #D73232;
+}
+
+.article__partisan-lean--c {
+  color: #333333;
+}
+
+.article__description {
+  font-size: 12px;
+}
+
+.article__read-more-link {
+  font-family: 'Open Sans Semibold', sans-serif;
 }
