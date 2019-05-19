@@ -1,6 +1,20 @@
 import { fetchArticles } from './utils/resource_fetcher';
 import { attemptURIDecode, removeHTMLTags } from './utils/formatter';
 
+const lastArticleIDStorage = 'lastArticleID';
+
+function checkScroll() {
+  let laID = localStorage.getItem(lastArticleIDStorage);
+
+  if (laID) {
+    let el = document.querySelector('[data-id="' + laID + '"');
+    if (el) {
+      window.scrollTo(0, el.offsetTop);
+      localStorage.removeItem(lastArticleIDStorage)
+    }
+  }
+}
+
 window.addEventListener('load', () => {
   let articleContainer = document.createElement('div');
   articleContainer.classList.add('articles-container');
@@ -28,10 +42,19 @@ window.addEventListener('load', () => {
       el.querySelector('.js-description').innerText = formattedPreview;
 
       el.setAttribute('href', article.article_url);
+      el.setAttribute('data-id', article.id);
+
+      el.addEventListener('click', e => {
+        e.preventDefault();
+        localStorage.setItem(lastArticleIDStorage, e.currentTarget.getAttribute('data-id'));
+        window.location.href = e.currentTarget.getAttribute('href');
+      });
 
       articleContainer.appendChild(el);
     });
 
     document.body.appendChild(articleContainer);
+
+    requestAnimationFrame(checkScroll);
   });
 });
