@@ -1,5 +1,7 @@
 /* THE BLUE #2B3692 */
 /* THE RED #D73232 */
+/* LIGHT RED #eddada #/
+/* LIGHT BLUE #c9cce6 #/
 
 /* Global */
 *, *:before, *:after {
@@ -54,7 +56,26 @@ a:active {
 /** Articles */
 .article {
   padding: 22px 12px;
-  border-bottom: 1px solid #DEDEDE;
+  border-bottom: 1px solid white;
+}
+
+.article--read.article--l, 
+.article--read.article--ll {
+  background-color: #c9cce6;
+}
+
+.article--read.article--r, 
+.article--read.article--rr {
+  background-color: #eddada;
+}
+
+.article--read.article--c {
+  background-color: #cfcfcf;
+}
+
+
+.article--read {
+  background-color: #dddddd;
 }
 
 .article__main-info {
