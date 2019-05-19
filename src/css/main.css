@@ -59,6 +59,7 @@ a:active {
 
 .article__main-info {
   display: flex;
+  padding-bottom: 12px;
 }
 .article__thumb {
   height: 50px;
@@ -72,7 +73,6 @@ a:active {
 
 .article__title-and-author {
   flex: 1;
-  padding-bottom: 12px;
 }
 
 .article__title {

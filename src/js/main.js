@@ -6,7 +6,6 @@ window.addEventListener('load', () => {
   articleContainer.classList.add('articles-container');
 
   fetchArticles().then((res) => {
-    console.log(res);
     const articleTemplate = document.querySelector('.js-article-template');
   
     res.items.forEach(article => {
