@@ -1,9 +1,17 @@
+const decodeHtmlEntity = function(str) {
+  return str.replace(/&#(\d+);/g, function(_, dec) {
+    return String.fromCharCode(dec);
+  });
+};
+
 export function attemptURIDecode(str) {
   try {
-    return decodeURIComponent(str);
+    return decodeHtmlEntity(decodeURIComponent(str));
   } catch(e) {
-    console.log(e);
-    console.log(str);
     return str;
   }
+}
+
+export function removeHTMLTags(str) {
+  return str.replace(/<(?:.|\n)*?>/gm, '');
 }

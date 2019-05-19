@@ -1,5 +1,5 @@
 import { fetchArticles } from './utils/resource_fetcher';
-import { attemptURIDecode } from './utils/formatter';
+import { attemptURIDecode, removeHTMLTags } from './utils/formatter';
 
 window.addEventListener('load', () => {
   let articleContainer = document.createElement('div');
@@ -24,7 +24,7 @@ window.addEventListener('load', () => {
       leanEl.innerText = article.partisan_lean;
       leanEl.classList.add(`article__partisan-lean--${article.partisan_lean.toLowerCase()}`)
 
-      let formattedPreview = attemptURIDecode(article.article_preview);
+      let formattedPreview = removeHTMLTags(attemptURIDecode(article.article_preview));
       el.querySelector('.js-description').innerText = formattedPreview;
 
       el.setAttribute('href', article.article_url);
