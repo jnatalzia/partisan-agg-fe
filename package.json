@@ -2,7 +2,7 @@
   "name": "partisan-agg-fe",
   "version": "1.0.0",
   "description": "Front end server for partisan aggregator",
-  "main": "index.js",
+  "main": "partisan-agg-fe.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.config.js",
