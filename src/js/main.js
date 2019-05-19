@@ -1,6 +1,7 @@
 import { fetchArticles } from './utils/resource_fetcher';
 import { attemptURIDecode, removeHTMLTags } from './utils/formatter';
 import { setArticleRead, getReadArticles } from './utils/storage';
+import { createdAtToTS } from './utils/date';
 
 const lastArticleIDStorage = 'lastArticleID';
 
@@ -50,6 +51,19 @@ window.addEventListener('load', () => {
       if (articlesRead[article.id]) {
         el.classList.add('article--read')
       }
+
+      let ts = createdAtToTS(article.created_at);
+      let timeDiff = Date.now() - ts;
+
+      let hoursAgo = timeDiff / 1000 / 60 / 60;
+      
+      let createdAtInfo = Math.floor(hoursAgo) + ' hours ago';
+      if (hoursAgo < 1) {
+        let minutesAgo = hoursAgo * 60;
+        createdAtInfo = Math.floor(minutesAgo) + ' minutes ago';
+      }
+
+      el.querySelector('.js-created-at').innerText = createdAtInfo;
 
       el.addEventListener('click', e => {
         e.preventDefault();

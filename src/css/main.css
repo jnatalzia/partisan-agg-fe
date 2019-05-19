@@ -132,3 +132,9 @@ a:active {
 .article__read-more-link {
   font-family: 'Open Sans Semibold', sans-serif;
 }
+
+.article__created-at {
+  font-family: "Open Sans Light";
+  font-style: italic;
+  font-size: 10px;
+}
