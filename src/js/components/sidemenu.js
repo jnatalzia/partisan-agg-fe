@@ -40,13 +40,20 @@ let lenses = {
     C: 0,
     R: 30,
     RR: 70
+  },
+  "Graham Bell (Curve)": {
+    LL: 10,
+    L: 25,
+    C: 30,
+    R: 25,
+    RR: 10
   }
 }
 
 let selectOptions = Object.keys(lenses);
 
 function setLens(lens) {
-  if (!lens) {
+  if (!lens || !lenses[lens]) {
     lens = selectOptions[0];
   }
   setBiasSelection(lens);
