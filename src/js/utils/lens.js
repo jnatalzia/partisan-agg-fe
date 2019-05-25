@@ -40,6 +40,13 @@ let lenses = {
     C: 30,
     R: 25,
     RR: 10
+  },
+  "Sans Fringe": {
+    LL: 0,
+    L: 30,
+    C: 40,
+    R: 30,
+    RR: 0
   }
 }
 
